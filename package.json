@@ -1,0 +1,21 @@
+{
+  "name": "tdd",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "jest": "^27.2.5",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  }
+}
