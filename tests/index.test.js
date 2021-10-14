@@ -47,7 +47,11 @@ describe('analyse', () => {
 
 describe('calculator', () => {
 
-    const calculator = new Calculator;
+    let calculator;
+    
+    beforeAll(() => {
+        calculator = new Calculator;
+    })
 
     test('add returns sum of arguments', () => {
 
@@ -97,10 +101,13 @@ describe('calculator', () => {
 
 describe('ceasar cipher', () => {
 
-    test('constructor generates an alphabet dictionary of index : letter', () => {
+    let cipher;
 
-        // Arrange
-        let cipher = new CeasarCipher(1);
+    beforeAll(() => {
+        cipher = new CeasarCipher(1);
+    })
+
+    test('constructor generates an alphabet dictionary of index : letter', () => {
 
         // Act
         let indexLetter = cipher.indexLetter;
@@ -113,9 +120,6 @@ describe('ceasar cipher', () => {
 
     test('constructor generates an alphabet dictionary of letter : index', () => {
 
-        // Arrange
-        let cipher = new CeasarCipher(1);
-
         // Act
         let letterIndex = cipher.letterIndex;
 
@@ -127,9 +131,6 @@ describe('ceasar cipher', () => {
     
     test('enciphers a string based on provided integer key', () => {
         
-        // Arrange
-        let cipher = new CeasarCipher(1);
-
         // Act
         let enciphered = cipher.encipher('abcd');
 
@@ -140,9 +141,6 @@ describe('ceasar cipher', () => {
 
     test('encipher wraps from z to a', () => {
         
-        // Arrange
-        let cipher = new CeasarCipher(1);
-
         // Act
         let enciphered = cipher.encipher('z');
 
@@ -152,9 +150,6 @@ describe('ceasar cipher', () => {
     })
 
     test('deciphers an enciphered key based on provided key', () => {
-
-        // Arrange
-        let cipher = new CeasarCipher(1);
 
         // Act
         let deciphered = cipher.decipher('bcde');
@@ -166,9 +161,6 @@ describe('ceasar cipher', () => {
 
     test('decipher wraps from a to z', () => {
         
-        // Arrange
-        let cipher = new CeasarCipher(1);
-
         // Act
         let deciphered = cipher.decipher('a');
 
